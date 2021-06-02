@@ -1,0 +1,11 @@
+.SettingsItem {
+  // @include display(flex, space-between, center);
+  @include font-roboto(rem(14), #FFFFFF, normal, normal, rem(21));
+
+  margin-top: rem(15);
+  margin-bottom: rem(15);
+
+  .SettingsName {
+    margin-left: 10px;
+  }
+}

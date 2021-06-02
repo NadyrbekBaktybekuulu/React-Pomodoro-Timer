@@ -1,0 +1,126 @@
+.SettingsPanel {
+  position: fixed;
+
+  top: 50px;
+  background: linear-gradient(90deg, #F78CA0 0%, #F9748F 20.31%, #FD868C 66.67%, #FE9A8B 100%), #FEAFAF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+
+  // top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+
+  width: rem(450);
+  height: 90%;
+  padding: rem(20);
+
+  z-index: z('settings-panel');
+
+  transition: all 0.5s ease;
+
+  @include mq('phone-wide') {
+    width: rem(380);
+  }
+
+  @include mq('phone') {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  #CloseBtn {
+    @include display(flex, center, center);
+
+    border: 1px solid #FAFAFA;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background: transparent;
+    padding: 10px 30px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FAFAFA;
+    transition-duration: .2s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+}
+
+.AppHeader {
+  @include display(flex, flex-end, center);
+
+  width: 100%;
+
+  margin-bottom: rem(40);
+  margin-top: rem(10);
+
+  @include mq('phone-wide') {
+    margin-bottom: rem(30);
+  }
+
+  @include mq('phone') {
+    margin-bottom: rem(0);
+  }
+
+}
+
+.SettingsBtn {
+  z-index: z('settings-btn');
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  & svg {
+    transition: transform 0.5s linear;
+    width: rem(36);
+    height: rem(36);
+    color: #e5e9f0;
+
+    @include mq('phone-wide') {
+      width: rem(28);
+      height: rem(28);
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  & :hover {
+    cursor: pointer;
+  }
+}
+
+.CloseSettings {
+  @include display(flex, center, center);
+
+    border: 1px solid #FAFAFA;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background: transparent;
+    padding: 10px 30px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FAFAFA;
+    transition-duration: .2s;
+    float: right;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+
+#open {
+  display: block;
+}
+
+#hide {
+  display: none;
+}
+
+

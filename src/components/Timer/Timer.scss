@@ -1,0 +1,13 @@
+.Timer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: rem(75);
+
+  @include mq('phone-wide') {
+    margin-bottom: rem(45);
+  }
+}

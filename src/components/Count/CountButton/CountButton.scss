@@ -1,0 +1,23 @@
+.Button {
+  background: none;
+  border: none;
+
+  transition: color 0.2s linear;
+  cursor: pointer;
+
+  & svg {
+    width: rem(16);
+    height: rem(16);
+
+    @include mq('phone-wide') {
+      width: rem(28);
+      height: rem(28);
+    }
+
+    fill: #e5e9f0;
+  }
+
+  &:hover svg {
+    fill: #bf616a;
+  }
+}

@@ -1,0 +1,71 @@
+// https://engageinteractive.co.uk/blog/top-10-scss-mixins
+
+// Media
+$breakpoints: (
+  'phone': 376px,
+  'phone-wide': 481px,
+  'phablet': 561px,
+  'tablet-small': 641px,
+  'tablet': 769px,
+  'tablet-wide': 1025px,
+  'desktop': 1249px,
+  'desktop-wide': 1441px,
+);
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// Style flex
+@mixin display($display, $content: center, $align: center) {
+  display: $display;
+  justify-content: $content;
+  align-items: $align;
+}
+
+// Pseudo el creator
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Fonts
+@mixin font-roboto(
+  $size: false,
+  $colour: false,
+  $weight: normal,
+  $style: normal,
+  $lh: false
+) {
+  font-family: 'Roboto', sans-serif;
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $style {
+    font-style: $style;
+  }
+
+  @if $lh {
+    line-height: $lh;
+  }
+}

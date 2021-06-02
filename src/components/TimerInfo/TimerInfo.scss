@@ -1,0 +1,17 @@
+@import '../../scss/utils/mixins';
+
+.TimerInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+
+.Time {
+  @include font-roboto(rem(60), #FAFAFA, normal, normal, rem(60));
+  margin-bottom: rem(10);
+}
+
+
